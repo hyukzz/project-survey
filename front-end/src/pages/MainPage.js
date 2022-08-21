@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function MainPage() {
+	const navigate = useNavigate();
+	const goCreate = () => {
+		navigate("/create");
+	};
 	return (
 		<MainContainer>
 			<TitleText>설문조사를 생성 또는 작성할 수 있습니다.</TitleText>
-			<BtnCreateContainer>
+			<BtnCreateContainer onClick={goCreate}>
 				<BtnCreateContent>
 					<BtnCreateText>생성하기</BtnCreateText>
 				</BtnCreateContent>
